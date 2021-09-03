@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+               https://www.springframework.org/schema/beans/spring-beans.xsd">
+               
+               
+     <bean id="dateFormat" class="java.text.SimpleDateFormat">
+     	<constructor-arg value="dd-MM-yyyy" />
+     </bean>
+     
+               
+   <bean id="emp1" class="com.learn.restEmployee.model.Employee">
+     <property name="id" value="101"></property>
+     <property name="name" value="John"></property>
+     <property name="salary" value="10000"></property>
+     <property name="permanent" value="true"></property>
+     <property name="dateOfBirth">
+     	 <bean factory-bean="dateFormat" factory-method="parse">
+     	 		<constructor-arg value="29-04-2000"/>
+     	 	</bean>
+     	</property>
+   
+   </bean>
+   <bean id="emp2" class="com.learn.restEmployee.model.Employee">
+     <property name="id" value="102"></property>
+     <property name="name" value="Johny"></property>
+     <property name="salary" value="20000"></property>
+     <property name="permanent" value="true"></property>
+     <property name="dateOfBirth">
+     	 <bean factory-bean="dateFormat" factory-method="parse">
+     	 		<constructor-arg value="29-04-2010"/>
+     	 	</bean>
+     	</property>
+   
+   </bean>
+   <bean id="emp3" class="com.learn.restEmployee.model.Employee">
+     <property name="id" value="103"></property>
+     <property name="name" value="Alisa"></property>
+     <property name="salary" value="40000"></property>
+     <property name="permanent" value="true"></property>
+     <property name="dateOfBirth">
+     	 <bean factory-bean="dateFormat" factory-method="parse">
+     	 		<constructor-arg value="29-05-2000"/>
+     	 	</bean>
+     	</property>
+   
+   </bean>
+   
+   <bean id="empList" class="java.util.ArrayList">
+   		<constructor-arg>
+   		<list>
+   			<ref bean="emp1" />
+   			<ref bean="emp2" />
+   			<ref bean="emp3" />
+   		</list>
+   		</constructor-arg>
+   </bean>
+               
+</beans>

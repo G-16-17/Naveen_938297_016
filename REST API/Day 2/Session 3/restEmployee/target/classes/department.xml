@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+               https://www.springframework.org/schema/beans/spring-beans.xsd">
+  
+  <bean id="dept1" class="com.learn.restEmployee.model.Department">
+    <property name="id" value="501" />
+    <property name="name" value="Sales" />
+    <property name="loc" value="Delhi" />
+  </bean>
+   <bean id="dept2" class="com.learn.restEmployee.model.Department">
+    <property name="id" value="502" />
+    <property name="name" value="Technical" />
+    <property name="loc" value="Jaipur" />
+  </bean>
+   <bean id="dept3" class="com.learn.restEmployee.model.Department">
+    <property name="id" value="503" />
+    <property name="name" value="Maintance" />
+    <property name="loc" value="Pune" />
+  </bean>
+  <bean id="deptList" class="java.util.ArrayList">
+  	<constructor-arg>
+  	  <list>
+  	  		<ref bean="dept1" />
+  	  		<ref bean="dept2" />
+  	  		<ref bean="dept3" />
+  	  </list>
+  	</constructor-arg>
+  </bean>
+               
+</beans>
