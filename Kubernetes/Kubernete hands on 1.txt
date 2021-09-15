@@ -1,0 +1,49 @@
+Microsoft Windows [Version 10.0.19043.1110]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\NAVEEN>minikube version
+minikube version: v1.23.0
+commit: 5931455374810b1bbeb222a9713ae2c756daee10
+
+C:\Users\NAVEEN>minikube start --driver=docker
+* minikube v1.23.0 on Microsoft Windows 10 Home Single Language 10.0.19043 Build 19043
+* Using the docker driver based on user configuration
+* Starting control plane node minikube in cluster minikube
+* Pulling base image ...
+* Downloading Kubernetes v1.22.1 preload ...
+    > preloaded-images-k8s-v12-v1...: 515.04 MiB / 515.04 MiB  100.00% 1.08 MiB
+    > gcr.io/k8s-minikube/kicbase: 355.82 MiB / 355.82 MiB  100.00% 690.64 KiB
+* Creating docker container (CPUs=2, Memory=2200MB) ...
+* Preparing Kubernetes v1.22.1 on Docker 20.10.8 ...
+  - Generating certificates and keys ...
+  - Booting up control plane ...
+  - Configuring RBAC rules ...
+* Verifying Kubernetes components...
+  - Using image gcr.io/k8s-minikube/storage-provisioner:v5
+* Enabled addons: storage-provisioner, default-storageclass
+* Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+
+C:\Users\NAVEEN>minikube status
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+
+
+C:\Users\NAVEEN>minikube stop
+* Stopping node "minikube"  ...
+* Powering off "minikube" via SSH ...
+* 1 nodes stopped.
+
+C:\Users\NAVEEN>minikube status
+minikube
+type: Control Plane
+host: Stopped
+kubelet: Stopped
+apiserver: Stopped
+kubeconfig: Stopped
+
+
+C:\Users\NAVEEN>
